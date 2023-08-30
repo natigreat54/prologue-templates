@@ -1,0 +1,314 @@
+/* Existing Styles */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+Pro&display=swap');
+
+:root {
+    --primary-color: #112e51;
+    --secondary-color: #E31D1C;
+    --third-color: #002F6C;
+    --usaid-red: #e31c3d;
+    --light-blue: #f2f8ff;
+    --white: #FFFFFF;
+}
+
+.navbar {
+  background-color: var(--primary-color);
+  font-family: 'Source Sans Pro', sans-serif; 
+  font-size: 16px;
+  padding: 20px;  
+/* Flexbox Alignment */
+  display: flex;
+  align-items: center; 
+  z-index: 1;
+}
+.navbar-links {
+    display: flex;
+}
+/* Styles for smaller devices */
+@media (max-width: 600px) {
+    .navbar-links {
+        display: block;
+    }
+}
+.navbar-brand {
+  margin-right: auto; 
+}
+.navbar-brand img{
+    max-width: 100%;
+    height: auto;
+}
+
+.navbar-links ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar-links li {
+  margin: 0 10px; 
+}
+.navbar-links a {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.navbar-links a:hover {
+    background-color: white;
+    color: var(--secondary-color);
+}
+
+.navbar-right {
+  margin-left: auto;
+}
+.navbar-right button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease; 
+}
+
+.navbar-right button:hover {
+  background-color: white;
+  color:  var(--secondary-color);
+  padding-right: 10%;
+}
+
+#home1 {
+    background-color: var(--primary-color); /* If using the color variables you provided earlier */
+    color: var(--white);
+    padding: 100px 50px;
+    text-align: left;
+    padding: 18% 18%;
+    margin-top: 10px;
+    display: flex; 
+    align-items: start; /* Aligns content to start/top of flex container */
+    justify-content: space-between;
+    align-items: center;
+    height: 71vh;
+}
+
+#home1 .content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#home1 .text-content {
+    flex: 1;
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#home1 .company-title {
+    font-size: 28px;
+    font-family: 'Merriweather', serif;
+    padding-bottom: 20px;
+}
+
+#home1 .company-desc {
+    font-size: 18px;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-bottom: 15px; /* Adjust to space out descriptions more or less */
+}
+
+#home1 .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--usaid-blue); 
+    padding-right: 18%;/* This will add padding to the right of the image inside its container */
+}
+
+#home1 .company-image {
+    height: auto;
+    border-radius: 10px;
+    height: auto;
+}
+
+
+#home1 .text-content{
+    display: flex;
+}
+#home1 .text-content {
+    order :1
+ }
+ 
+ #home1 .company-image {
+    order :2
+ }
+ 
+ /* Styles for smaller devices */
+ @media (max-width :600px) {
+    #home1 .content{
+       flex-direction :column
+    }
+    #home1 .text-content{
+       order :2
+    }
+    #home1 .company-image{
+       order :1
+    }
+ }
+
+/* style for About Section */
+ #about h2 {
+    font-family:  'Merriweather', serif;
+    font-weight: bold;
+    font-size: 48px; 
+    text-align: center;
+    color: var(--primary-color);
+    position: relative; 
+}
+
+.team-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    padding-left: 18%;
+    padding-right: 18%;
+    grid-gap: 40px;
+}
+
+.team-card {
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.18);
+    }
+
+.team-card .container{
+    position: relative;
+    clip-path: polygon(100% 0, 0 0, 0 95%, 100% 100%);
+
+}
+.team-card .container img{
+    width: 100%;
+    display: block;
+    border-radius: 20px 20px 0 0;
+}
+.team-card .container:after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px 20px 0 0;
+    opacity: 0.3;
+
+
+}
+.team-card .details {
+    padding: 15px;
+}
+
+.team-card h3 {
+    color: var(--white);
+    font-family: 'Merriweather', serif;
+    font-weight: 800;
+    }
+    
+.team-card h4 {
+    font-size: 14px;
+    color: var(--light-blue);
+    }
+
+@media screen and (max-width: 768px) {
+    .team-card {
+        flex-basis: 100%;  /* Full width on smaller screens */
+        margin-bottom: 20px; 
+    }
+    #about h2 {
+        font-size: 32px;
+    }
+}
+/* style for Project section */
+#projects {
+    padding: 80px 0;
+    color: var(--white);
+    background-color: var(--primary-color);
+}
+
+#projects h2 {
+
+    font-family: 'Merriweather', serif;
+    font-size: 32px;
+    color: var(--white);
+}
+
+#projects p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--white);
+}
+.project .col-md-6:first-child {
+    display: flex;
+    flex-direction: column;
+  }
+
+.project {
+    padding: 20px;
+    background: var(--light-blue);
+    color: var(--primary-color);
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.project h3 {
+    margin-top: 0;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px 0;
+    font-size: 16px;
+    margin-top: 10px;
+
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contact h3,
+.social-links h3 {
+    margin-top: 0;
+}
+
+/* Social Links */
+.social-links a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+.social-links a:hover {
+    color: var(--secondary-color); /* or any hover color of your choice */
+}
+
+/* Copyright Credits */
+.credits p {
+    margin: 0;
+}
+
+
+.navbar, footer {
+    position: sticky;
+    top: 0px;
+    bottom: 0;
+}
